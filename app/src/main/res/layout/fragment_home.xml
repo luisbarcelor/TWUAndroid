@@ -139,12 +139,12 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/headphones_img"
+                            android:id="@+id/phone_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:src="@drawable/headphones"
+                            android:src="@drawable/phone"
                             tools:ignore="NestedWeights" />
 
                         <TextView
@@ -198,11 +198,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/phone_img"
+                            android:id="@+id/headphones_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:src="@drawable/phone"
+                            android:src="@drawable/headphones"
                             tools:ignore="NestedWeights" />
 
                         <TextView
@@ -231,7 +231,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:src="@drawable/desktop"
+                            android:src="@drawable/services"
                             tools:ignore="NestedWeights" />
 
                         <TextView

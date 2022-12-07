@@ -17,4 +17,21 @@
     <string name="headphones">Headphones</string>
     <string name="services">Services</string>
     <string name="mouse">Mouse</string>
+    <string name="calculator_title">Select an option:</string>
+    <string name="calculator_error">Missing values!</string>
+    <string name="calculate">Calculate</string>
+    <string name="calculator_val1">Insert first value:</string>
+    <string name="calculator_val2">Insert second value:</string>
+    <string name="calculator_result">Result</string>
+    <string name="calculator_sum">Sum</string>
+    <string name="calculator_subtract">Subtract</string>
+    <string name="calculator_multiply">Multiply</string>
+    <string name="calculator_divide">Divide</string>
+
+    <string name="db_val1">Number 1</string>
+    <string name="db_val2">Number 2</string>
+    <string name="db_operation">Operation</string>
+    <string name="db_result">Result</string>
+    <string name="db_show_op">Show OP</string>
+
 </resources>

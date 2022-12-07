@@ -12,10 +12,10 @@ import com.twu_android.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DesktopFragment#newInstance} factory method to
+ * Use the {@link LaptopFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DesktopFragment extends Fragment {
+public class LaptopFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class DesktopFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DesktopFragment() {
+    public LaptopFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class DesktopFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DesktopFragment.
+     * @return A new instance of fragment LaptopFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DesktopFragment newInstance(String param1, String param2) {
-        DesktopFragment fragment = new DesktopFragment();
+    public static LaptopFragment newInstance(String param1, String param2) {
+        LaptopFragment fragment = new LaptopFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class DesktopFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_desktop, container, false);
+        return inflater.inflate(R.layout.fragment_laptop, container, false);
     }
 }

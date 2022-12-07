@@ -34,6 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:baselineAligned="false"
+                    android:clickable="true"
                     android:gravity="center_horizontal"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
@@ -45,6 +46,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:background="@drawable/categories_ripple"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
@@ -75,6 +77,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:background="@drawable/categories_ripple"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
@@ -101,6 +104,7 @@
                         android:id="@+id/wifi_button"
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
+                        android:background="@drawable/categories_ripple"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
@@ -127,11 +131,12 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/headphones_button"
+                        android:id="@+id/phone_button"
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:background="@drawable/categories_ripple"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
@@ -148,7 +153,7 @@
                             tools:ignore="NestedWeights" />
 
                         <TextView
-                            android:id="@+id/headphones_text"
+                            android:id="@+id/phone_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -161,6 +166,7 @@
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="5dp"
+                        android:background="@drawable/categories_ripple"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -186,10 +192,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/phone_button"
+                        android:id="@+id/headphones_button"
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="5dp"
+                        android:background="@drawable/categories_ripple"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -206,7 +213,7 @@
                             tools:ignore="NestedWeights" />
 
                         <TextView
-                            android:id="@+id/phone_text"
+                            android:id="@+id/headphones_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -220,6 +227,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:background="@drawable/categories_ripple"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"

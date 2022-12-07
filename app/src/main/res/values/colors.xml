@@ -12,6 +12,7 @@
     <color name="primary_light">#FDCD49</color>
     <color name="primary_dark">#DEA402</color>
     <color name="secondary">#242424</color>
+    <color name="secondary_26">#42242424</color>
     <color name="accent">#E03F3F</color>
     <color name="text">#242424</color>
     <color name="secondary_text">#999999</color>

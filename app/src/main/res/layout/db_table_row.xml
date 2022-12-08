@@ -11,28 +11,24 @@
         android:layout_width="40dp"
         android:layout_marginStart="5dp"
         android:layout_height="wrap_content"
-        android:text="@string/db_val1"
         android:textColor="@color/primary" />
 
     <TextView
         android:id="@+id/db_num2"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="@string/db_val2"
         android:textColor="@color/primary" />
 
     <TextView
         android:id="@+id/db_op"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="@string/db_operation"
         android:textColor="@color/primary" />
 
     <TextView
         android:id="@+id/db_res"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="@string/db_result"
         android:textColor="@color/primary" />
 
 </LinearLayout>

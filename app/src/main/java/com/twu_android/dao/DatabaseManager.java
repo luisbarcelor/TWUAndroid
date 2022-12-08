@@ -45,7 +45,11 @@ public class DatabaseManager {
     }
 
     public static void insertOperation(double val1, double val2, String operation, double result) {
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.1.139:3306/calculadora");
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.1.139:3306/calculadora?" +
+                "useSSL=false&user=luisbarcelo&password=030305");
              PreparedStatement statement = conn.prepareStatement("INSERT INTO operaciones " +
                      "values (null, ?, ?, ?, ?);")) {
 
@@ -58,6 +62,7 @@ public class DatabaseManager {
 
         } catch (SQLException ex) {
             System.out.println("ERROR WHILE INSERTING OPERATION");
+            ex.printStackTrace();
         }
     }
 

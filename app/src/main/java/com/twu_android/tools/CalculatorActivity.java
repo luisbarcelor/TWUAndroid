@@ -43,23 +43,31 @@ public class CalculatorActivity extends AppCompatActivity {
             try {
                 double num1Value = Double.parseDouble(num1.getText().toString());
                 double num2Value = Double.parseDouble(num2.getText().toString());
-                double resultValue;
+                String operation = "null";
+                double resultValue = 0;
 
                 if (sumarButton.isChecked()) {
+                    operation = "Sum";
                     resultValue = Worker.sumar(num1Value, num2Value);
                     result.setText(String.valueOf(resultValue));
                 } else if (restarButton.isChecked()) {
+                    operation = "Subtract";
                     resultValue = Worker.restar(num1Value, num2Value);
                     result.setText(String.valueOf(resultValue));
                 } else if (multiplicarButton.isChecked()) {
+                    operation = "Multiply";
                     resultValue = Worker.multiplicar(num1Value, num2Value);
                     result.setText(String.valueOf(resultValue));
                 } else if (dividirButton.isChecked()) {
+                    operation = "Divide";
                     resultValue = Worker.dividir(num1Value, num2Value);
                     result.setText(String.valueOf(resultValue));
                 } else {
                     result.setText(R.string.calculator_error);
                 }
+
+                DatabaseManager.insertOperation(num1Value, num2Value, operation, resultValue);
+
             } catch (Exception e) {
                 result.setText(R.string.calculator_error);
             }
@@ -69,19 +77,18 @@ public class CalculatorActivity extends AppCompatActivity {
         showOp.setOnClickListener(v -> {
             //        Add to showOP table
             LinearLayout db_table = findViewById(R.id.db_table);
-            ArrayList<Operation> operationsList = DatabaseManager.readOperations();
+            Operation lastOp = DatabaseManager.getLastOperation(DatabaseManager.readOperations());
+            View toBeAdded = getLayoutInflater().inflate(R.layout.db_table_row, db_table);
 
-            for (int i = 0; i < operationsList.size(); i++) {
-                View toBeAdded = getLayoutInflater().inflate(R.layout.db_table_row, db_table);
-                TextView db_num1 = toBeAdded.findViewById(R.id.db_num1);
-                TextView db_num2 = toBeAdded.findViewById(R.id.db_num2);
-                TextView db_op = toBeAdded.findViewById(R.id.db_op);
-                TextView db_res = toBeAdded.findViewById(R.id.db_res);
-                db_num1.setText(String.valueOf(operationsList.get(i).getFirst_value()));
-                db_num2.setText(String.valueOf(operationsList.get(i).getSecond_value()));
-                db_op.setText(String.valueOf(operationsList.get(i).getOperation_name()));
-                db_res.setText(String.valueOf(operationsList.get(i).getResult()));
-            }
+            TextView db_num1 = toBeAdded.findViewById(R.id.db_num1);
+            TextView db_num2 = toBeAdded.findViewById(R.id.db_num2);
+            TextView db_op = toBeAdded.findViewById(R.id.db_op);
+            TextView db_res = toBeAdded.findViewById(R.id.db_res);
+
+            db_num1.setText(String.valueOf(lastOp.getFirst_value()));
+            db_num2.setText(String.valueOf(lastOp.getSecond_value()));
+            db_op.setText(String.valueOf(lastOp.getOperation_name()));
+            db_res.setText(String.valueOf(lastOp.getResult()));
         });
     }
 

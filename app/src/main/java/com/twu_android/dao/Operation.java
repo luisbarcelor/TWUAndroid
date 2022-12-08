@@ -1,5 +1,7 @@
 package com.twu_android.dao;
 
+import androidx.annotation.NonNull;
+
 public class Operation {
     private final int id;
     private final double first_value;
@@ -34,5 +36,12 @@ public class Operation {
 
     public double getResult() {
         return result;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return id + "  " + first_value + "  " + second_value + "  " + operation_name + "  " +
+                result;
     }
 }

@@ -8,9 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.twu_android.dao.DatabaseManager;
+import com.twu_android.dao.Operation;
 import com.twu_android.menus.StoreFragment;
 import com.twu_android.menus.ProfileFragment;
 import com.twu_android.menus.ToolsFragment;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+
     }
 
     @Override

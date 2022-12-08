@@ -1,18 +1,30 @@
 package com.twu_android.dao;
 
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.StrictMode;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class DatabaseManager {
     public static ArrayList<Operation> readOperations() {
-        ArrayList<Operation> operationList = new ArrayList<>();
+        ArrayList<Operation> operationsList = new ArrayList<>();
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/calculadora");
-             PreparedStatement statement = conn.prepareStatement("SELECT * FROM operaciones");
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        //Background work here
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.1.139:3306/calculadora?" +
+                "useSSL=false&user=luisbarcelo&password=030305");
+             PreparedStatement statement = conn.prepareStatement("SELECT * FROM operaciones;");
              ResultSet rs = statement.executeQuery()) {
 
             while (rs.next()) {
@@ -22,20 +34,20 @@ public class DatabaseManager {
                 String operation_name = rs.getString("operacion");
                 double result = rs.getDouble("resultado");
 
-                operationList.add(new Operation(id, first_value, second_value, operation_name, result));
+                operationsList.add(new Operation(id, first_value, second_value, operation_name, result));
             }
 
         } catch (SQLException ex) {
             System.out.println("ERROR WHILE READING OPERATIONS");
         }
 
-        return operationList;
+        return operationsList;
     }
 
     public static void insertOperation(double val1, double val2, String operation, double result) {
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/calculadora");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.1.139:3306/calculadora");
              PreparedStatement statement = conn.prepareStatement("INSERT INTO operaciones " +
-                     "values (null, ?, ?, ?, ?)")) {
+                     "values (null, ?, ?, ?, ?);")) {
 
             statement.setDouble(1, val1);
             statement.setDouble(2, val2);

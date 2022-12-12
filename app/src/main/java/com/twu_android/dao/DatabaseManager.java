@@ -22,7 +22,7 @@ public class DatabaseManager {
         StrictMode.setThreadPolicy(policy);
 
         //Background work here
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://ec2-15-188-8-44.eu-west-3.compute.amazonaws.com:3306/calculadora?" +
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://ec2-35-181-53-115.eu-west-3.compute.amazonaws.com:3306/calculadora?" +
                 "useSSL=false&user=luisbarcelo&password=030305");
              PreparedStatement statement = conn.prepareStatement("SELECT * FROM operaciones;");
              ResultSet rs = statement.executeQuery()) {
@@ -48,7 +48,7 @@ public class DatabaseManager {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://ec2-15-188-8-44.eu-west-3.compute.amazonaws.com:3306/calculadora?" +
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://ec2-35-181-53-115.eu-west-3.compute.amazonaws.com:3306/calculadora?" +
                 "useSSL=false&user=luisbarcelo&password=030305");
              PreparedStatement statement = conn.prepareStatement("INSERT INTO operaciones " +
                      "values (null, ?, ?, ?, ?);")) {
